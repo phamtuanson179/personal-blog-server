@@ -16,6 +16,12 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@categories/*": ["src/categories/*"],
+      "@commons/*": ["src/commons/*"],
+      "@core/*": ["src/core/*"],
+      "@middlewares/*": ["src/middlewares/*"]
+    }
   }
 }
