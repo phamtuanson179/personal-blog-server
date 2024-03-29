@@ -12,7 +12,11 @@ export class CategoriesService {
   ) {}
 
   async create(createCategoryDto: CreateCategoryDto): Promise<Category> {
-    const res = await this.categoryModel.create(createCategoryDto);
+    const res = await this.categoryModel.create({
+      ...createCategoryDto,
+      isDeleted: false,
+    });
+
     return res;
   }
 
@@ -26,14 +30,25 @@ export class CategoriesService {
     updateCategoryDto: UpdateCategoryDto,
   ): Promise<Category> {
     const res = await this.categoryModel.findOneAndUpdate(
-      { id },
+      { _id: id },
       updateCategoryDto,
+      { returnOriginal: false },
     );
+
     return res;
   }
 
   async detele(id: string) {
     const res = await this.categoryModel.deleteOne({ id });
+    return res;
+  }
+
+  async softDetele(id: string) {
+    const res = await this.categoryModel.findByIdAndUpdate(
+      { _id: id },
+      { isDeleted: true },
+      { returnOriginal: false },
+    );
     return res;
   }
 }

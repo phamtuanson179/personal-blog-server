@@ -21,7 +21,8 @@
       "@categories/*": ["src/categories/*"],
       "@commons/*": ["src/commons/*"],
       "@core/*": ["src/core/*"],
-      "@middlewares/*": ["src/middlewares/*"]
+      "@middlewares/*": ["src/core/middlewares/*"],
+      "@models/*": ["src/shared/models/*"]
     }
   }
 }

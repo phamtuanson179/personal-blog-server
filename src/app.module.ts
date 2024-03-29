@@ -1,9 +1,9 @@
-import { LoggerMiddleware } from '@middlewares/logger.middleware';
+import { LoggerMiddleware } from '@core/middlewares/logger.middleware';
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { CategoriesModule } from './categories/categories.module';
+import { AppService } from 'src/app.service';
 
 @Module({
   imports: [
