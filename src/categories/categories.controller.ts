@@ -34,6 +34,12 @@ export class CategoriesController {
     return categories;
   }
 
+  @Get(':id')
+  async getById(@Param('id') id: string) {
+    const category = await this.categoriesService.getById(id);
+    return category;
+  }
+
   @Put(':id')
   async update(
     @Param('id') id: string,

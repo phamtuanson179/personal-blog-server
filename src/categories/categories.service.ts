@@ -21,7 +21,12 @@ export class CategoriesService {
   }
 
   async get(): Promise<Category[]> {
-    const res = await this.categoryModel.find();
+    const res = await this.categoryModel.find({ isDeleted: false });
+    return res;
+  }
+
+  async getById(id: string): Promise<Category> {
+    const res = await this.categoryModel.findById(id, { isDeleted: false });
     return res;
   }
 

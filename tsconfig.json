@@ -19,6 +19,7 @@
     "noFallthroughCasesInSwitch": false,
     "paths": {
       "@categories/*": ["src/categories/*"],
+      "@blogs/*": ["src/blogs/*"],
       "@commons/*": ["src/commons/*"],
       "@core/*": ["src/core/*"],
       "@middlewares/*": ["src/core/middlewares/*"],
