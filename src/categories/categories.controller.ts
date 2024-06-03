@@ -9,7 +9,6 @@ import {
   Param,
   Post,
   Put,
-  Query,
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
@@ -54,9 +53,8 @@ export class CategoriesController {
   }
 
   @Delete(':id')
-  async delete(@Query('id') id: string) {
-    const deletedCategory = await this.categoriesService.softDetele(id);
-
+  async delete(@Param('id') id: string) {
+    const deletedCategory = await this.categoriesService.softDelete(id);
     return deletedCategory;
   }
 }

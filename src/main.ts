@@ -21,7 +21,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
-  await app.listen(3000);
-  console.log(`Application is running on: http://localhost:3000`);
+  await app.listen(3000, '0.0.0.0');
+  console.log(`Application is running on: http://10.10.10.11:3000`);
 }
 bootstrap();

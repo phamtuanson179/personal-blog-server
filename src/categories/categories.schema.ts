@@ -27,3 +27,16 @@ export class Category {
 }
 
 export const CategorySchema = SchemaFactory.createForClass(Category);
+
+CategorySchema.virtual('id').get(function () {
+  return this._id.toHexString();
+});
+
+// Ensure virtual fields are serialised.
+CategorySchema.set('toJSON', {
+  virtuals: true,
+});
+
+CategorySchema.set('toObject', {
+  virtuals: true,
+});

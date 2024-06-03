@@ -43,16 +43,16 @@ export class CategoriesService {
     return res;
   }
 
-  async detele(id: string) {
+  async delete(id: string) {
     const res = await this.categoryModel.deleteOne({ id });
     return res;
   }
 
-  async softDetele(id: string) {
+  async softDelete(id: string) {
     const res = await this.categoryModel.findByIdAndUpdate(
       { _id: id },
       { isDeleted: true },
-      { returnOriginal: false },
+      { new: true },
     );
     return res;
   }
