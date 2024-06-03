@@ -1,3 +1,4 @@
+import { CreateCategoryDto } from '@categories/dto/create-category.dto';
 import { UpdateCategoryDto } from '@categories/dto/update-category.dto';
 import { TransformResponseInterceptor } from '@core/interceptors/transform-response.interceptor';
 import {
@@ -13,7 +14,6 @@ import {
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { CategoriesService } from 'src/categories/categories.service';
-import { CreateCategoryDto } from 'src/categories/dto/create-category.dto';
 
 @ApiTags('categories')
 @Controller('categories')

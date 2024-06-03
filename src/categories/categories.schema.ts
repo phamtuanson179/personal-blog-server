@@ -13,7 +13,7 @@ export class Category {
   @Prop()
   description: string;
 
-  @Prop()
+  @Prop({ unique: true })
   order: number;
 
   @Prop()

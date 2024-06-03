@@ -1,7 +1,7 @@
 {
   "name": "personal-blog-server",
   "version": "0.0.1",
-  "description": "",
+  "description": "<p align=\"center\">   <a href=\"http://nestjs.com/\" target=\"blank\"><img src=\"https://nestjs.com/img/logo-small.svg\" width=\"200\" alt=\"Nest Logo\" /></a> </p>",
   "author": "",
   "private": true,
   "license": "UNLICENSED",
@@ -28,6 +28,7 @@
     "@nestjs/swagger": "^7.3.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
+    "dotenv": "^16.4.5",
     "mongoose": "^8.2.3",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1"
@@ -79,5 +80,10 @@
       "prettier --write",
       "eslint  --max-warnings=7"
     ]
-  }
+  },
+  "main": ".eslintrc.js",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": []
 }

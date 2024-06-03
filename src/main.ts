@@ -1,13 +1,15 @@
+import { TransformExceptionInterceptor } from '@core/interceptors/transform-exception.interceptor';
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import 'dotenv/config';
 import { AppModule } from './app.module';
-import { TransformExceptionInterceptor } from '@core/interceptors/transform-exception.interceptor';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { cors: true });
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
   app.useGlobalInterceptors(new TransformExceptionInterceptor());
+  app.setGlobalPrefix('api');
 
   const config = new DocumentBuilder()
     .setTitle('Personal blog example')
